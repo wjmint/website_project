@@ -1,0 +1,74 @@
+[
+	{
+		"name": "baked beans",
+		"price": "0.40",
+		"image": "beans.jpg",
+		"type": "vegetables"
+	},
+	{
+		"name": "carrot coriander",
+		"price": "0.60",
+		"image": "carrotcoriander.jpg",
+		"type": "vegetables"
+	},
+	{
+		"name": "chicken noodle",
+		"price": "1.0",
+		"image": "chickennoodle.jpg",
+		"type": "meat"
+	},
+	{
+		"name": "corned beef",
+		"price": "1.20",
+		"image": "cornedbeef.jpg",
+		"type": "meat"
+	},
+	{
+		"name": "garden peas",
+		"price": "0.80",
+		"image": "gardenpeas",
+		"type": "vegetables"
+	},
+	{
+		"name": "hot dogs",
+		"price": "1.50",
+		"image": "hotdogs.jpg",
+		"type": "meat"
+	},
+	{
+		"name": "kidney beans",
+		"price": "0.80",
+		"image": "kidney.jpg",
+		"type": "vegetables"
+	},
+	{
+		"name": "mushey peas",
+		"price": "0.60",
+		"image": "musheypeas.jpg",
+		"type": "vegetables"
+	},
+	{
+		"name": "refried beans",
+		"price": "0.60",
+		"image": "refried.jpg",
+		"type": "vegetables"
+	},
+	{
+		"name": "spam",
+		"price": "1.20",
+		"image": "spam.jpg",
+		"type": "meat"
+	},
+	{
+		"name": "tomato",
+		"price": "0.80",
+		"image": "tomato.jpg",
+		"type": "vegetables"
+	},
+	{
+		"name": "tomato soup",
+		"price": "0.80",
+		"image": "tomatosoup.jpg",
+		"type": "soup"
+	}
+]
