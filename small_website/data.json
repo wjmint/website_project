@@ -1,0 +1,44 @@
+[
+	{
+		"name": "Astroneer",
+		"price": 27.2,
+		"image": "Astroneer.jpg",
+		"type": "sandbox"
+	},
+	{
+		"name": "Cities Skylines",
+		"price": 28.6,
+		"image": "Cities_Skylines.jpg",
+		"type": "sandbox"
+	},
+	{
+		"name": "Destiny 2",
+		"price": 0.0,
+		"image": "Destiny_2.jpg",
+		"type": "fps"
+	},
+	{
+		"name": "Hand Simulator",
+		"price": 2.0,
+		"image": "Hand_simulator.jpg",
+		"type": "Simulation"
+	},
+	{
+		"name": "Insurgency Sandstorm",
+		"price": 28.6,
+		"image": "Insurgency_Sandstorm.jpg",
+		"type": "fps"
+	},
+	{
+		"name": "Rainbow Six Siege",
+		"price": 19.6,
+		"image": "R6S.jpg",
+		"type": "fps"
+	},
+	{
+		"name": "Space Engineers",
+		"price": 18.3,
+		"image": "Space_Engineers.jpg",
+		"type": "sandbox"
+	}
+]
