@@ -26,7 +26,7 @@
 	{
 		"name": "garden peas",
 		"price": "0.80",
-		"image": "gardenpeas",
+		"image": "gardenpeas.jpg",
 		"type": "vegetables"
 	},
 	{
@@ -44,7 +44,7 @@
 	{
 		"name": "mushey peas",
 		"price": "0.60",
-		"image": "musheypeas.jpg",
+		"image": "mushypeas.jpg",
 		"type": "vegetables"
 	},
 	{

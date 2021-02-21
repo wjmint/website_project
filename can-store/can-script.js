@@ -26,23 +26,51 @@ fetch('products.json').then(function (response) {
 // }
 
 function initialise(products) {
+	let category = document.querySelector('#category');
+	let btn = document.querySelector('button');
+	let categoryGroup = [];
+
+	console.log('category', category.value);
+
 	for (let i = 0; i < products.length; i++) {
-		fetchBlob(products[i]);
+		categoryGroup.push(products[i]);
 	}
+
+	btn.onclick = filterProducts;
+
+	function filterProducts(e) {
+		e.preventDefault();
+
+		if (category.value === 'All') {
+			for (let i = 0; i < products.length; i++) {
+				categoryGroup.push(products[i]);
+			}
+			fetchBlob(categoryGroup);
+		} else if (category.value === 'Vegetables') {
+			for (let i = 0; i < products.length; i++) {
+				if (products[i]?.type === 'vegetables') {
+					categoryGroup.push(products[i]);
+				}
+			}
+		}
+	}
+	fetchBlob(categoryGroup);
 }
 
 function fetchBlob(product) {
-	let url = 'images/' + product.image;
+	for (i = 0; i in product; ) {
+		let url = 'images/' + i.image;
 
-	fetch(url)
-		.then(res => {
-			return res.blob();
-		})
-		.then(blob => {
-			let objURL = URL.createObjectURL(blob);
+		fetch(url)
+			.then(res => {
+				return res.blob();
+			})
+			.then(blob => {
+				let objURL = URL.createObjectURL(blob);
 
-			display(objURL, product);
-		});
+				display(objURL, product);
+			});
+	}
 }
 
 function display(objURL, product) {
