@@ -39,38 +39,39 @@ function initialise(products) {
 	btn.onclick = filterProducts;
 
 	function filterProducts(e) {
+		let typeLower = category.value.toLowerCase();
 		e.preventDefault();
 
 		if (category.value === 'All') {
 			for (let i = 0; i < products.length; i++) {
-				categoryGroup.push(products[i]);
+				fetchBlob(products[i]);
 			}
-			fetchBlob(categoryGroup);
-		} else if (category.value === 'Vegetables') {
+		} else {
 			for (let i = 0; i < products.length; i++) {
-				if (products[i]?.type === 'vegetables') {
-					categoryGroup.push(products[i]);
+				if (products[i]?.type === typeLower) {
+					fetchBlob(products[i]);
 				}
 			}
 		}
 	}
-	fetchBlob(categoryGroup);
 }
 
 function fetchBlob(product) {
-	for (i = 0; i in product; ) {
-		let url = 'images/' + i.image;
-
-		fetch(url)
-			.then(res => {
-				return res.blob();
-			})
-			.then(blob => {
-				let objURL = URL.createObjectURL(blob);
-
-				display(objURL, product);
-			});
+	const main = document.querySelector('main');
+	while (main.firstChild) {
+		main.removeChild(main.firstChild);
 	}
+	let url = 'images/' + product?.img;
+
+	fetch(url)
+		.then(function (res) {
+			return res.blob();
+		})
+		.then(function (blob) {
+			let objURL = URL.createObjectURL(blob);
+
+			display(objURL, product);
+		});
 }
 
 function display(objURL, product) {
