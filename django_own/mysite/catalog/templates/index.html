@@ -1,0 +1,9 @@
+{% extends "base_generic.html" %} {% block title %} <title>this is my page</title> {% endblock %} {% block content %}
+<h1>Cats</h1>
+<p>Welcome cat album!</p>
+<h2>Dynamic content</h2>
+<p>The album has the following record counts:</p>
+<ul>
+	<li><strong>Books:</strong> {{ num_cats }}</li>
+	{% endblock %}
+</ul>
