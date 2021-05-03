@@ -53,6 +53,16 @@ django-admin startapp `name`
 
 
 
+Creating superuser(admin)
+
+```bash
+python manage.py creatsuperuser
+```
+
+
+
+
+
 Running the Django project
 
 - If you are having an error when you run server for the first time than just install Django using `pip`
@@ -76,5 +86,17 @@ from django.http import HttpResponse
 def index(request):
     html = '<h1>Hello World</h1>'
     return HttpResponse(html)
+```
+
+
+
+Migrate
+
+```bash
+python manage.py makemigrations
+
+//after
+
+python manage.py migrate
 ```
 
