@@ -100,3 +100,13 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
+
+
+## Postgresql
+
+### Making new database
+
+```sql
+CREATE DATABASE `name` OWNER `owner_name`
+```
+
