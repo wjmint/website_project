@@ -15,6 +15,7 @@ def User(request):
             print('First Name:', form.cleaned_data['first_name'])
             print('Last Name:', form.cleaned_data['last_name'])
             print('E-mail:', form.cleaned_data['email'])
+            form.save()
 
 
     return render(request, 'first/form.html', {'form': form})
