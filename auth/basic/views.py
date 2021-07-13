@@ -1,7 +1,22 @@
+from django import http
 from django.shortcuts import render
-from basic import forms
+from basic.forms import UserForm, UserProfileInfoForm
+
+from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponseRedirect, HttpResponse
+from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+def index(request):
+    return render(request, 'basic/index.html')
+
+@login_required
+def special(request):
+    # remember to also set login url in setting.py
+    # Login_URL = '/basic/user_login/'
+    return HttpResponse('Succesfully logined')
+
 def register(request):
     registered = False
 
@@ -46,3 +61,35 @@ def register(request):
                     {'user_form':user_form,
                     'profile_form':profile_form,
                     'registered':registered})
+
+def user_login(request):
+    if request.method == 'POST':
+        # First get the username and password suppiled
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        # Django's built-in authentication function:
+        user = authenticate(username = username, password = password)
+
+        # If we have a user
+        if user:
+            # check if the account is active
+            if user.is_active:
+                # Login granted
+                login(request, user)
+                # Send the user back to some page
+                # In this case, we send them to the homepage.
+                return HttpResponseRedirect(reverse('index'))
+            else:
+                # If account is not active
+                return HttpResponse('Your account is not active.')
+        else:
+            print('login try failed')
+            return HttpResponse('Invalid login details supplied')
+    else:
+        return render(request, 'basic/index.html')
+
+@login_required
+def user_logout(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('index'))
