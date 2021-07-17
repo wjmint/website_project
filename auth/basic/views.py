@@ -21,8 +21,8 @@ def register(request):
     registered = False
 
     if request.method == 'POST':
-        user_form = forms.UserForm(data=request.POST)
-        profile_form = forms.UserProfileInfoForm(data=request.POST)
+        user_form = UserForm(data=request.POST)
+        profile_form = UserProfileInfoForm(data=request.POST)
 
         if user_form.is_valid() and profile_form.is_valid():
 
@@ -52,8 +52,8 @@ def register(request):
 
     else:
         # Was not an HTTP post so we just render the forms as blank.
-        user_form = forms.UserForm()
-        profile_form = forms.UserProfileInfoForm()
+        user_form = UserForm()
+        profile_form = UserProfileInfoForm()
 
         # This is the render and context dictionary to feed
         # back to the registration.html file page.

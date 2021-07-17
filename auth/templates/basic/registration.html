@@ -6,7 +6,7 @@
 	<h1>Register Here</h1>
 	<h2>Fill out the form</h2>
 	<form method="post" enctype="multipart/form-data">
-		{% csrf_token %} {{% user_form.as_p %}} {{% profile_form.as_p %}}
+		{% csrf_token %} {{ user_form.as_p }} {{ profile_form.as_p }}
 		<input type="submit" name="" value="Submit" />
 	</form>
 	{% endif %}
