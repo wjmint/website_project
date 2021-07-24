@@ -36,7 +36,7 @@ def register(request):
             profile.user = user
             # Check if they provided a profile picture
             if 'profile_pic' in request.FILES:
-                print('found it')
+                print('found profile picture')
                 # If yes, then grab it from the POST form reply
                 profile.profile_pic = request.FILES['profile_pic']
 
