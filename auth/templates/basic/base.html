@@ -15,7 +15,7 @@
 				<ul class="nav navbar-nav">
 					<li><a class="navbar-brand" href="{% url 'index' %}">Django</a></li>
 					<li><a class="navbar-link" href="{% url 'admin:index' %}">Admin</a></li>
-					<li><a class="navbar-link" href="{% url 'basic_app:register' %}">Register</a></li>
+
 					{% if user.is_authenticated %}
 					<li>
 						<a class="navbar-link" href="{% url 'logout' %}"> logout </a>
@@ -29,6 +29,7 @@
 						</a>
 					</li>
 					{% else %}
+					<li><a class="navbar-link" href="{% url 'basic_app:register' %}">Register</a></li>
 					<li><a class="navbar-link" href="{% url 'basic_app:user_login' %}">Login</a></li>
 					{% endif %}
 				</ul>
