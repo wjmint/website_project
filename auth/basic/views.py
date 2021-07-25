@@ -87,7 +87,10 @@ def user_login(request):
             print('login try failed')
             return HttpResponse('Invalid login details supplied')
     else:
-        return render(request, 'basic/index.html')
+        return render(request, 'basic/login.html')
+
+def user_info(request):
+    return render(request, 'basic/user_info.html')
 
 @login_required
 def user_logout(request):

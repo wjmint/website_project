@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+		<script src="https://kit.fontawesome.com/8a02d27627.js" crossorigin="anonymous"></script>
 
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,7 +17,17 @@
 					<li><a class="navbar-link" href="{% url 'admin:index' %}">Admin</a></li>
 					<li><a class="navbar-link" href="{% url 'basic_app:register' %}">Register</a></li>
 					{% if user.is_authenticated %}
-					<li><a class="navbar-link" href="{% url 'logout' %}">Logout</a></li>
+					<li>
+						<a class="navbar-link" href="{% url 'logout' %}"> logout </a>
+					</li>
+					<li>
+						<a class="navbar-link" href="{% url 'basic_app:user_info' %}">
+							<i
+								class="far fa-user-circle fa-lg"
+								style="color: black; position: relative; left: 5000%"
+							></i>
+						</a>
+					</li>
 					{% else %}
 					<li><a class="navbar-link" href="{% url 'basic_app:user_login' %}">Login</a></li>
 					{% endif %}
