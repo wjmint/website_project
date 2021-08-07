@@ -1,7 +1,23 @@
 {% extends "basic/base.html" %} {% block body_block %}
 
 <div class="jumbotron">
-	<h1>Welcome</h1>
+	<h1>Welcome, {{user.username}}</h1>
 </div>
-
+<table border="2">
+	<thead>
+		<th><h2>User info</h2></th>
+	</thead>
+	<tbody>
+		<tr>
+			<th><h3>Username</h3></th>
+			<th><h3>email</h3></th>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<th>{{user.username}}</th>
+			<th>{{user.email}}</th>
+		</tr>
+	</tfoot>
+</table>
 {% endblock %}
