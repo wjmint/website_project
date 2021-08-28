@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-static-top">
+			<div class="container">
+				<ul class="nav navbar-nav">
+					<li><a class="navbar-band" href="{% url 'basic_app:list' %}">Schools</a></li>
+					<li><a class="navbar-link" href="{% url 'admin:index' %}">Admin</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container">
+			{% block body_block %}
+			<!-- Anything outside of this will be inherited if you extend -->
+			{% endblock %}
+		</div>
+	</body>
+</html>
