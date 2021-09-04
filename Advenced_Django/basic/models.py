@@ -6,13 +6,17 @@ from django.urls import reverse
 # Create your models here.
 class School(models.Model):
     name = models.CharField(max_length=20)
-    location = models.CharField(max_length=100)
+    location = models.CharField(max_length=1000)
     principals = models.CharField(max_length=20)
 
+    # def __str__(self):
+    #     return reverse('basic_app:detail', kwargs={'pk': self.pk})
     def __str__(self):
-        return reverse('basic_app:detail', kwargs={'pk': self.pk})
-
+        return self.name
 class Student(models.Model):
     name = models.CharField(max_length=256)
     age = models.PositiveIntegerField()
     school = models.ForeignKey(School, related_name='students', on_delete=CASCADE)
+
+    def __str__(self):
+        return self.name
