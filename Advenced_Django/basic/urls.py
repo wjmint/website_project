@@ -6,6 +6,7 @@ from .views import SchoolListView, SchoolDetailView
 
 app_name = 'basic_app'
 urlpatterns = [
-    path('list/', SchoolListView.as_view(), name='list'),
-    url(r'^(?P<pk>[-\w]+)/$', SchoolDetailView.as_view(), name='detail'),
+    path('', SchoolListView.as_view(), name='list'),
+    url(r'(?P<pk>[-\w]+)/',SchoolDetailView.as_view(),name='detail'),
+    
 ]
